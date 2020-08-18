@@ -14,10 +14,3 @@ const TableBody = (props) => {
 }
 
 export default TableBody
-
-/* <tr>
-<th scope="row" >1</th>
-<td>Steph</td>
-<td>Curry</td>
-<td>@mdo</td>
-</tr> */
