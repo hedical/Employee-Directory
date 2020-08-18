@@ -65,7 +65,7 @@ function App() {
     }
   });
 
-  let sort = false;
+
 
   return (
     <div className="App">
@@ -77,21 +77,15 @@ function App() {
         <div className="container">
           <h5 className="text">Preset filters</h5>
 
-          <FilterButtons text="Age" click={() => {
-
-            if (sort === false) {
-              sort = true
-              employee.sort((a, b) => (a.age > b.age) ? 1 : -1)
-              console.log(employee);
-              console.log(sort);
-              setEmployee([...employee])
-
-            }
-
+          <FilterButtons text="Age Down" click={() => {
+            employee.sort((a, b) => (a.age > b.age) ? 1 : -1)
+            setEmployee([...employee])
           }} />
-          <FilterButtons text="Reset" click={() => {
-            sort = false
-            console.log(sort);
+          <FilterButtons text="Age Up" click={() => {
+            employee.sort((a, b) => (b.age > a.age) ? 1 : -1)
+            setEmployee([...employee])
+          }} />
+          <FilterButtons text="New employees" click={() => {
             getEmployees()
             setEmployee([...initialEmployeeArray])
           }} />
@@ -120,7 +114,6 @@ function App() {
     </div>
   );
 }
-
 
 
 export default App;
